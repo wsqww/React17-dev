@@ -4,6 +4,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom';
 
 import JsxTest from "./pages/Jsx/jsx";
+import RouterTest from './pages/routerTest/routerTest'
 
 class App extends React.Component {
   render() {
@@ -15,11 +16,13 @@ class App extends React.Component {
             <li><Link to="/">Home</Link></li>
             <li><Link to={`/jsx/${num}`}>Jsx</Link></li>
             <li><Link to={`/home`}>"/home" redirect to "/"</Link></li>
+            <li><Link to={`/router_test`}>Router Test</Link></li>
           </ul>
         </nav>
         <Switch>
           <Route path="/" exact render={() => <h1>Welcome!</h1>} />
           <Route path="/jsx/:num" component={JsxTest} />
+          <Route path="/router_test" component={RouterTest} />
           {/* Redirect */}
           <Redirect from="/home" to="/" />
           {/*404 page*/}
