@@ -19,15 +19,17 @@ class App extends React.Component {
             <li><Link to={`/router_test`}>Router Test</Link></li>
           </ul>
         </nav>
-        <Switch>
-          <Route path="/" exact render={() => <h1>Welcome!</h1>} />
-          <Route path="/jsx/:num" component={JsxTest} />
-          <Route path="/router_test" component={RouterTest} />
-          {/* Redirect */}
-          <Redirect from="/home" to="/" />
-          {/*404 page*/}
-          <Route render={() => <h1>404</h1>} />
-        </Switch>
+        <div className="main">
+          <Switch>
+            <Route path="/" exact render={() => <h1>Welcome!</h1>} />
+            <Route path="/jsx/:num" component={JsxTest} />
+            <Route path="/router_test" component={RouterTest} />
+            {/* Redirect */}
+            <Redirect from="/home" to="/" />
+            {/*404 page*/}
+            <Route render={() => <h1>404</h1>} />
+          </Switch>
+        </div>
       </Router>
     </div>;
   }
